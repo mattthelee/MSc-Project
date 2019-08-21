@@ -18,6 +18,7 @@ import random
 
 def main(args):
     """
+    *** Requires MineRL v0.2.3 not MineRL v0.2.2 which is used by other project python files. v0.2.3 is required for seeding which greatly reduces assessment time ***
     Loads in a TPG population from pickle file. Due to the randomness of MineRL it is difficult to choose the best agent off a single score.
     It take too long to assess every agetn for 100 episodes so this evaluates the agents against a small numbber of repetitions of the environment.
     Then takes the best agents from that and continues to evaluate them for X repetitions, recording their scores.
