@@ -26,7 +26,7 @@ def main(args):
     # Start timer
     tStart = time.time()
     print(f"Starting agent with args: {args}")
-    if !os.path.isdir(args.output):
+    if not os.path.isdir(args.output):
         print("WARNING: output directory does not exist or not set, therefore will not save TPG population at the end of each generation")
 
     if args.humanTraining != 0:
@@ -130,6 +130,9 @@ def main(args):
                     env, obs, envResetCount, env1Thread, env2Thread = envReset(args, env,envResetCount, env1, obs1, env1Thread, env2, obs2, env2Thread)
                 else:
                     obs = env.reset()
+                    # Handle MineRL v0.2.2 and earlier versions
+                    if type(obs) == tuple:
+                        obs, _ = obs
                 print(f"[{datetime.datetime.now().isoformat()[11:-7]}] 0, Gen #{str(gen)}, Team #{str(teamNum)}, Score: {str(score)}")
                 for i in range(steps): # Run for pre-determined step limit
 
@@ -188,6 +191,9 @@ def main(args):
 def envResetWrapper(env,obs):
     # Wrapper function for env reset, required for multiprocessing
     obs = env.reset()
+    # Handle MineRL v0.2.2 and earlier versions
+    if type(obs) == tuple:
+        obs, _ = obs
     return
 
 def envReset(args,env,envResetCount, env1, obs1, env1Thread, env2, obs2, env2Thread):
@@ -215,6 +221,9 @@ def envReset(args,env,envResetCount, env1, obs1, env1Thread, env2, obs2, env2Thr
         return env, obs, envResetCount, env1Thread, env2Thread
     else:
         obs = env.reset()
+        # Handle MineRL v0.2.2 and earlier versions
+        if type(obs) == tuple:
+            obs, _ = obs
         envResetCount += 1
     return env, obs, envResetCount
 

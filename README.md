@@ -32,5 +32,3 @@ A limit of 10000 is recommended to avoid memory issues.
 
 ## VAE
 To train the Variational Auto-Encoder (VAE) run: `python vae.py`. To see available options run `python vae.py -h`
-
-
