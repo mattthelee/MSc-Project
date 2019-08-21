@@ -13,6 +13,8 @@ OpenGL libraries for Minecraft 1.11 must be installed.
 3. Install MineRL, its dataset and dependencies following: http://minerl.io/docs/tutorials/index.html
 
 # Running:
-To run the basic experiment on MineRL Navigate dense task: `python tpgAgent.py`
+To run the basic experiment on MineRL Navigate dense task: `python tpgAgent.py` 
+
 If running headlessly then prepend with xvfb-run (or your chosen software renderer): `xvfb-run python tpgAgent.py`
+
 Run `tpgAgent.py -h` to see full list of options available including environments, step limits and resuming from pretrained population
