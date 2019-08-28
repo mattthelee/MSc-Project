@@ -9,7 +9,7 @@ OpenGL libraries for Minecraft 1.11 must be installed.
 
 # Installation:
 1. Install Python modules with `pip install -r requirements.txt`
-2. Install PyTPG by following instructions here: https://github.com/Ryan-Amaral/PyTPG
+2. Install PyTPG by following instructions here: https://github.com/Ryan-Amaral/PyTPG *** N.B. You must use version 0.8 of TPG! ***
 3. Install MineRL, its dataset and dependencies following: http://minerl.io/docs/tutorials/index.html
 
 # Running:
